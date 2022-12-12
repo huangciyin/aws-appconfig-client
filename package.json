@@ -1,41 +1,43 @@
 {
-  "name": "node-typescript-boilerplate",
+  "name": "@my-lab/aws-appconfig-client",
   "version": "0.0.0",
-  "description": "Minimalistic boilerplate to quick-start Node.js development in TypeScript.",
+  "description": "aws appconfig client",
   "type": "module",
   "engines": {
-    "node": ">= 18.12 <19"
+    "node": ">= 12"
   },
   "devDependencies": {
-    "@types/jest": "~29.2",
-    "@types/node": "~18",
     "@typescript-eslint/eslint-plugin": "~5.44",
     "@typescript-eslint/parser": "~5.44",
     "eslint": "~8.28",
     "eslint-config-prettier": "~8.5",
     "eslint-plugin-jest": "~27.1",
+    "@types/jest": "~29.2",
+    "@types/node": "~18",
+    "dotenv": "^16.0.3",
     "jest": "~29.3",
     "prettier": "~2.8",
     "rimraf": "~3.0",
     "ts-jest": "~29.0",
+    "ts-node": "^10.9.1",
     "tsutils": "~3.21",
     "typescript": "~4.9"
   },
   "scripts": {
-    "start": "node build/src/main.js",
+    "start": "node build/src/index.js",
+    "demo": "node build/demo/index.ts",
     "clean": "rimraf coverage build tmp",
-    "prebuild": "npm run lint",
     "build": "tsc -p tsconfig.json",
     "build:watch": "tsc -w -p tsconfig.json",
     "build:release": "npm run clean && tsc -p tsconfig.release.json",
-    "lint": "eslint . --ext .ts --ext .mts",
     "test": "jest --coverage",
     "prettier": "prettier --config .prettierrc --write .",
     "test:watch": "jest --watch"
   },
-  "author": "Jakub Synowiec <jsynowiec@users.noreply.github.com>",
+  "author": "Huang Ciyin <ciyinhuang@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "@aws-sdk/client-appconfigdata": "^3.226.0",
     "tslib": "~2.4"
   },
   "volta": {
